@@ -8,17 +8,23 @@ class PhysicalModelExample extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: PhysicalModel(
-          color: Colors.blue,
+          color: Colors.blue.withOpacity(0),
           elevation: 20.0,
           shadowColor: Colors.red,
-          child: Container(
-            constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.8, maxHeight: 400),
-            child: const Center(
-              child: Text(
-                'PhysicalModel',
-                style: TextStyle(
-                  fontSize: 32,
-                  color: Colors.white,
+          child: Opacity(
+            opacity: 0,
+            child: Container(
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width * 0.8,
+                maxHeight: 400,
+              ),
+              child: const Center(
+                child: Text(
+                  'PhysicalModel',
+                  style: TextStyle(
+                    fontSize: 32,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
