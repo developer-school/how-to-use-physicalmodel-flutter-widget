@@ -5,16 +5,15 @@ class PhysicalModelExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: PhysicalModel(
           color: Colors.blue,
           elevation: 20.0,
           shadowColor: Colors.red,
-          child: SizedBox(
-            height: 400,
-            width: 400,
-            child: Center(
+          child: Container(
+            constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.8, maxHeight: 400),
+            child: const Center(
               child: Text(
                 'PhysicalModel',
                 style: TextStyle(
